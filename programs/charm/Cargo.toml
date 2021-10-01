@@ -1,0 +1,20 @@
+[package]
+name = "charm"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "charm"
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.16.2"
+anchor-spl = "0.16.2"
+spl-token-metadata = {path = "./../../token-metadata/program", features = ["no-entrypoint"]}
